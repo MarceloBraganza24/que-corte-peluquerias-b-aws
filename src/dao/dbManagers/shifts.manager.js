@@ -1,6 +1,9 @@
 import { shiftsModel } from '../dbManagers/models/shifts.model.js'
 
 export default class ShiftsDao {
+    constructor() {
+        console.log('Working with partners DB');        
+    }
     getAll = async() => {
         const shifts = await shiftsModel.find().lean();
         return shifts;

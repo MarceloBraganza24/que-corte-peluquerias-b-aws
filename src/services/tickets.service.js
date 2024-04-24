@@ -1,4 +1,4 @@
-/* import TicketsRepository from '../repositories/tickets.repository.js';
+import TicketsRepository from '../repositories/tickets.repository.js';
 import { Tickets } from '../dao/factory.js';
 
 const ticketsDao = new Tickets();
@@ -28,4 +28,4 @@ export {
     getAll,
     getById,
     save
-} */
+}

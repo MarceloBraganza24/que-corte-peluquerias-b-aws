@@ -11,7 +11,7 @@ import config from "./config/config.js";
 
 import UsersRouter from "./routes/users.router.js";
 import SessionsRouter from "./routes/sessions.router.js";
-//import TicketsRouter from "./routes/tickets.router.js";
+import TicketsRouter from "./routes/tickets.router.js";
 import ShiftsRouter from "./routes/shifts.router.js";
 import PaymentsRouter from "./routes/payments.router.js";
 import PartnersRouter from "./routes/partners.router.js";
@@ -20,7 +20,7 @@ const app = express();
 
 const usersRouter = new UsersRouter();
 const sessionsRouter = new SessionsRouter();
-//const ticketsRouter = new TicketsRouter();
+const ticketsRouter = new TicketsRouter();
 const shiftsRouter = new ShiftsRouter();
 const paymentsRouter = new PaymentsRouter();
 const partnersRouter = new PartnersRouter();
@@ -50,7 +50,7 @@ app.use('/api/docs', swaggerUiExpress.serve, swaggerUiExpress.setup(specs));
 
 app.use('/api/users', usersRouter.getRouter());
 app.use('/api/sessions', sessionsRouter.getRouter());
-//app.use('/api/tickets', ticketsRouter.getRouter());
+app.use('/api/tickets', ticketsRouter.getRouter());
 app.use('/api/shifts', shiftsRouter.getRouter());
 app.use('/api/payments', paymentsRouter.getRouter());
 app.use('/api/partners', partnersRouter.getRouter());

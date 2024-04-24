@@ -1,4 +1,4 @@
-/* 
+
 export default class TicketsRepository {
     constructor(dao) {
         this.dao = dao;
@@ -15,4 +15,4 @@ export default class TicketsRepository {
         const ticketSaved = await this.dao.save(ticket);
         return ticketSaved;
     }
-} */
+}
