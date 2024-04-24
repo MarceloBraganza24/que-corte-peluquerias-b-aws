@@ -1,6 +1,9 @@
 import { ticketsModel } from '../dbManagers/models/tickets.model.js'
 
-export default class TicketsDao {
+export default class Tickets {
+    constructor() {
+        console.log('Working with tickets DB');        
+    }
     getAll = async() => {
         const tickets = await ticketsModel.find().lean();
         return tickets;

@@ -1,5 +1,3 @@
-//import { Tickets } from '../dao/factory.js';
-
 export default class TicketsRepository {
     constructor(dao) {
         this.dao = dao;
