@@ -1,4 +1,4 @@
-import TicketsRepository from '../repositories/tickets.repository.js';
+/* import TicketsRepository from '../repositories/tickets.repository.js';
 import { Tickets } from '../dao/factory.js';
 
 const ticketsDao = new Tickets();
@@ -17,7 +17,7 @@ const save = async (purchaser, amount) => {
     const ticket = {
         code,
         purchase_datetime:  new Date().toLocaleString(),
-        amount,
+        amount, 
         purchaser
     }
     const ticketSaved = await ticketsRepository.save(ticket);
@@ -28,4 +28,4 @@ export {
     getAll,
     getById,
     save
-}
+} */

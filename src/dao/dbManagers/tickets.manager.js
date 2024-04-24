@@ -1,4 +1,4 @@
-import { ticketsModel } from '../dbManagers/models/tickets.model.js'
+/* import { ticketsModel } from '../dbManagers/models/tickets.model.js'
 
 export default class Tickets {
     constructor() {
@@ -16,4 +16,4 @@ export default class Tickets {
         const ticketSaved = await ticketsModel.create(ticket);
         return ticketSaved;
     }
-}
+} */

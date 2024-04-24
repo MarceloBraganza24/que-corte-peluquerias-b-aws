@@ -1,4 +1,4 @@
-import * as ticketsService from '../services/tickets.service.js';
+/* import * as ticketsService from '../services/tickets.service.js';
 
 const getAll = async (req, res) => {
     try {
@@ -36,4 +36,4 @@ export {
     getAll,
     getById,
     save
-}
+} */

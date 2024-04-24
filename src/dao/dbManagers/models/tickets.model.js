@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+/* import mongoose from 'mongoose';
 
 const ticketsCollection = 'tickets';
 
@@ -23,3 +23,4 @@ const ticketsSchema = new mongoose.Schema({
 });
 
 export const ticketsModel = mongoose.model(ticketsCollection, ticketsSchema);
+ */
