@@ -1,5 +1,4 @@
 import * as shiftsService from '../services/shifts.service.js';
-import * as partnersService from '../services/partners.service.js';
 import { MercadoPagoConfig, Preference } from 'mercadopago';
 
 const client = new MercadoPagoConfig({ accessToken: 'APP_USR-8730839288140102-041711-5191da1d09ff6dadb6da4e113c6fd8bc-1771017789' });

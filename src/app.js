@@ -1,6 +1,5 @@
 import express from "express";
 import cors from 'cors';
-import handlebars from 'express-handlebars';
 import { __mainDirname } from './utils/utils.js';
 import initializePassport from "./config/passport.js";
 import passport from "passport";
@@ -10,7 +9,6 @@ import swaggerUiExpress from 'swagger-ui-express';
 import cookieParser from 'cookie-parser';
 import config from "./config/config.js";
 
-import ViewsRouter from "./routes/views.router.js";
 import UsersRouter from "./routes/users.router.js";
 import SessionsRouter from "./routes/sessions.router.js";
 import TicketsRouter from "./routes/tickets.router.js";
@@ -20,7 +18,6 @@ import PartnersRouter from "./routes/partners.router.js";
 
 const app = express();
 
-const viewsRouter = new ViewsRouter();
 const usersRouter = new UsersRouter();
 const sessionsRouter = new SessionsRouter();
 const ticketsRouter = new TicketsRouter();
@@ -31,16 +28,11 @@ const partnersRouter = new PartnersRouter();
 app.use(addLogger);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(`${__mainDirname}/src/public`));
 app.use(cors());
 app.use(cookieParser());
 
 initializePassport();
 app.use(passport.initialize());
-
-app.engine('handlebars', handlebars.engine());
-app.set('views', `${__mainDirname}/src/views`);
-app.set('view engine', 'handlebars');
 
 const swaggerOptions = {
     definition: {
@@ -56,7 +48,6 @@ const swaggerOptions = {
 const specs = swaggerJsdoc(swaggerOptions);
 app.use('/api/docs', swaggerUiExpress.serve, swaggerUiExpress.setup(specs));
 
-app.use('/', viewsRouter.getRouter());
 app.use('/api/users', usersRouter.getRouter());
 app.use('/api/sessions', sessionsRouter.getRouter());
 app.use('/api/tickets', ticketsRouter.getRouter());

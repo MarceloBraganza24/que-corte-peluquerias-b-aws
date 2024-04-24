@@ -1,8 +1,8 @@
-import { Tickets } from '../dao/factory.js';
+//import { Tickets } from '../dao/factory.js';
 
 export default class TicketsRepository {
-    constructor() {
-        this.dao = new Tickets();
+    constructor(dao) {
+        this.dao = dao;
     }
     getAll = async () => {
         const tickets = await this.dao.getAll();

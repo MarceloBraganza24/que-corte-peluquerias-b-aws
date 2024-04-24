@@ -23,8 +23,8 @@ const getById = async (req, res) => {
 
 const save = async (req, res) => {
     try {
-        const { purchaser, amount } = req.body;
-        const ticket = await ticketsService.save(purchaser, amount);
+        const { purchaser, amount, title } = req.body;
+        const ticket = await ticketsService.save(purchaser, amount, title);
         res.sendSuccessNewResourse(ticket);
     } catch (error) {
         res.sendServerError(error.message);

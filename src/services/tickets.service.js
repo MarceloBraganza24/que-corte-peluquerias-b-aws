@@ -1,13 +1,15 @@
 import TicketsRepository from '../repositories/tickets.repository.js';
+import { Tickets } from '../dao/factory.js';
 
-const ticketsManager = new TicketsRepository();
+const ticketsDao = new Tickets();
+const ticketsRepository = new TicketsRepository(ticketsDao);
 
 const getAll = async () => {
-    const tickets = await ticketsManager.getAll();
+    const tickets = await ticketsRepository.getAll();
     return tickets;
 }
 const getById = async (id) => {
-    const ticket = await ticketsManager.getById(id);
+    const ticket = await ticketsRepository.getById(id);
     return ticket;
 }
 const save = async (purchaser, amount) => {
@@ -18,7 +20,7 @@ const save = async (purchaser, amount) => {
         amount,
         purchaser
     }
-    const ticketSaved = await ticketsManager.save(ticket);
+    const ticketSaved = await ticketsRepository.save(ticket);
     return ticketSaved;
 }
 
