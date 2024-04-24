@@ -5,7 +5,7 @@ import { uploader } from "../utils/utils.js";
 
 export default class UsersRouter extends Router {
     init() {
-        this.get('/', [accessRolesEnum.ADMIN], passportStrategiesEnum.JWT, getAll);
+        this.get('/', [accessRolesEnum.PUBLIC], passportStrategiesEnum.NOTHING, getAll);
         this.post('/finalize-purchase', [accessRolesEnum.ADMIN, accessRolesEnum.PREMIUM, accessRolesEnum.USER], passportStrategiesEnum.JWT, finalizePurchase);
         this.post('/password-link', [accessRolesEnum.ADMIN, accessRolesEnum.PREMIUM, accessRolesEnum.USER], passportStrategiesEnum.JWT, mailToResetPass);
         this.post('/new-pass', [accessRolesEnum.ADMIN, accessRolesEnum.PREMIUM, accessRolesEnum.USER], passportStrategiesEnum.JWT, newPass);
