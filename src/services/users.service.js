@@ -53,7 +53,7 @@ const sendMailToResetPass = async(user) => {
         <body>
             <h1>Recuperación de password</h1>
             <h2>Accede al siguiente link</h2>
-            <a href="http://localhost:8081/newPass-view?token=${accessToken}"> has click aquí</a>
+            <a href="https://58c8-18-191-97-85.ngrok-free.app/newPass-view?token=${accessToken}"> has click aquí</a>
         </body>
         </html>`
     }
