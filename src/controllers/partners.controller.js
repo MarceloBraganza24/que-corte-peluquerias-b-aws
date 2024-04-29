@@ -1,6 +1,27 @@
 import * as partnersService from '../services/partners.service.js';
 import { PartnerAlreadyExists } from "../utils/custom.exceptions.js";
 
+const getAll = async (req, res) => {
+    try {
+        const partners = await partnersService.getAll();
+        res.sendSuccess(partners);
+    } catch (error) {
+        res.sendServerError(error.message);
+        req.logger.error(error.message);
+    }
+}
+
+const getById = async (req, res) => {
+    try {
+        const { pid } = req.params;            
+        const partner = await partnersService.getById(pid);
+        res.sendSuccess(partner);
+    } catch (error) {
+        res.sendServerError(error.message);
+        req.logger.error(error.message);
+    }
+}
+
 const register = async (req, res) => {
     try {
         const { first_name ,last_name, dni, phone, email } = req.body;
@@ -17,5 +38,7 @@ const register = async (req, res) => {
 }
 
 export {
+    getAll,
+    getById,
     register
 }

@@ -7,6 +7,14 @@ import { sendEmail } from './mail.service.js';
 const partnersDao = new Partners();
 const partnersRepository = new PartnersRepository(partnersDao);
 
+const getAll = async () => {
+    const partners = await partnersRepository.getAll();
+    return partners;
+}
+const getById = async (id) => {
+    const partner = await partnersRepository.getById(id);
+    return partner;
+}
 const register = async(partner) => {
     const partnerByEmail = await partnersRepository.getByEmail(partner.email);
     if(partnerByEmail) {
@@ -23,5 +31,7 @@ const register = async(partner) => {
 }
 
 export {
+    getAll,
+    getById,
     register
 }
