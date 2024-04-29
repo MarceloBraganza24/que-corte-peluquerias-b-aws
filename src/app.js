@@ -28,11 +28,7 @@ const partnersRouter = new PartnersRouter();
 app.use(addLogger);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({
-    headers: {
-        'Access-Control-Allow-Origin': 'http://que-corte-peluquerias-frontend.s3-website.us-east-2.amazonaws.com'
-    }
-}));
+app.use(cors());
 app.use(cookieParser());
 
 initializePassport();
