@@ -19,7 +19,7 @@ const createOrderShift = async (req, res) => {
                 pending: "https://www.facebook.com/Quecort"
             },
             auto_return: "approved",
-            notification_url: `https://58c8-18-191-97-85.ngrok-free.app/api/payments/webhook-shift?first_name=${req.body.first_name}&last_name=${req.body.last_name}&date=${req.body.date}&schedule=${req.body.schedule}`
+            notification_url: `https://95fc-18-191-97-85.ngrok-free.app/api/payments/webhook-shift?first_name=${req.body.first_name}&last_name=${req.body.last_name}&date=${req.body.date}&schedule=${req.body.schedule}`
         }
         const preference = new Preference(client)
         const result = await preference.create({body});
@@ -49,7 +49,7 @@ const createOrderPartner = async (req, res) => {
                 pending: "https://www.facebook.com/Quecort"
             },
             auto_return: "approved",
-            notification_url: `https://58c8-18-191-97-85.ngrok-free.app/api/payments/webhook-partner?first_name=${req.body.first_name}&last_name=${req.body.last_name}&dni=${req.body.dni}&phone=${req.body.phone}&email=${req.body.email}`
+            notification_url: `https://95fc-18-191-97-85.ngrok-free.app/api/payments/webhook-partner?first_name=${req.body.first_name}&last_name=${req.body.last_name}&dni=${req.body.dni}&phone=${req.body.phone}&email=${req.body.email}`
         }
         const preference = new Preference(client)
         const result = await preference.create({body});
@@ -101,7 +101,7 @@ const getWebhooksPartners = async (req, res) => {
                 phone: payment.phone,
                 email: payment.email,
             }
-            await fetch('https://58c8-18-191-97-85.ngrok-free.app/api/partners/register', {
+            await fetch('https://95fc-18-191-97-85.ngrok-free.app/api/partners/register', {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json'
