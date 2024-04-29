@@ -23,6 +23,7 @@ const login = async (req, res) => {
         const { email, password } = req.body;
         if( !email || !password) return res.sendClientError('incomplete values');
         const accessToken = await usersService.login(password, email);
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.sendSuccess(accessToken);
     } catch (error) {
         if(error instanceof InvalidCredentials) {
